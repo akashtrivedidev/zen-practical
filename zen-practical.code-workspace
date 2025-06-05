@@ -6,6 +6,7 @@
   ],
   "settings": {
     "editor.formatOnSave": true,
-    "workbench.colorTheme": "Vesper light"
+    "workbench.colorTheme": "Vesper light",
+    "window.zoomLevel": 1
   }
 }

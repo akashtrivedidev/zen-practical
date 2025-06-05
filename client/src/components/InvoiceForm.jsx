@@ -152,6 +152,7 @@ export default function InvoiceForm(props) {
               value={currentInvoice.qty}
               type="number"
               name="qty"
+              min={1}
               onChange={(e) => {
                 handleChange(e);
                 updateAmounts();
