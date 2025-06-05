@@ -2,12 +2,6 @@ import mongoose from "mongoose";
 
 // Define the Invoice_Detail schema
 const invoiceDetailSchema = new mongoose.Schema({
-  invoicedetail_id: {
-    type: String,
-    default: () => new mongoose.Types.ObjectId().toString(), // Generates a unique ObjectId as a string
-    unique: true,
-    required: true,
-  },
   invoice_id: {
     type: String, // References invoice_id from Invoice_Master
     required: true,

@@ -1,12 +1,6 @@
 import mongoose from "mongoose";
 
 const invoiceMasterSchema = new mongoose.Schema({
-  invoice_id: {
-    type: String,
-    default: () => new mongoose.Types.ObjectId().toString(), // Generates a unique ObjectId as a string
-    unique: true,
-    required: true,
-  },
   invoice_no: {
     type: Number,
     default: 1, // Initial value, will be incremented based on last invoice

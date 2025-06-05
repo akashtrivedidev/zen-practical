@@ -29,7 +29,7 @@ export default class InvoiceController {
       let p = products[i];
       let newIncoiceDetail = {
         invoice_id: masterInvoiceId,
-        product_id: p.product_id,
+        product_id: p._id,
         rate: Number(p.rate),
         unit: p.unit,
         qty: Number(p.qty),

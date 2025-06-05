@@ -23,7 +23,6 @@ function App() {
   function addProduct(product) {
     let temp = [...invoice.products];
     temp.push(product);
-    console.log(temp);
 
     setInvoice((prev) => {
       return {
@@ -69,6 +68,7 @@ function App() {
 
   return (
     <div className="">
+      <ToastContainer />
       <InvoiceForm addProduct={addProduct} products={products} />
       <ProductTable products={invoice.products} deleteProduct={deleteProduct} />
       <div className="d-flex gap-3 align-items-end">
@@ -87,7 +87,6 @@ function App() {
           Reset
         </button>
       </div>
-      <ToastContainer />
     </div>
   );
 }

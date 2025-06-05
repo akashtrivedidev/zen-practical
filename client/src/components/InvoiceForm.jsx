@@ -6,7 +6,7 @@ export default function InvoiceForm(props) {
   const [currentInvoice, setCurrentInvoice] = useState({
     customer_name: "",
     uid: v4(),
-    product_id: "",
+    _id: "",
     product_name: "",
     rate: "",
     unit: "",
@@ -25,11 +25,11 @@ export default function InvoiceForm(props) {
 
   function updateCurrentProduct(event, productId) {
     for (let i = 0; i < products.length; i++) {
-      if (products[i].product_id == productId) {
+      if (products[i]._id == productId) {
         setCurrentProduct(products[i]);
         setCurrentInvoice((prev) => ({
           ...prev,
-          product_id: productId,
+          _id: productId,
           unit: products[i].unit,
           rate: products[i].rate,
           product_name: products[i].product_name,
@@ -40,7 +40,7 @@ export default function InvoiceForm(props) {
 
   useEffect(() => {
     updateAmounts();
-  }, [currentInvoice.product_id, currentInvoice.qty, currentInvoice.discount]);
+  }, [currentInvoice._id, currentInvoice.qty, currentInvoice.discount]);
 
   function updateAmounts() {
     if (currentProduct) {
@@ -66,7 +66,7 @@ export default function InvoiceForm(props) {
     setCurrentInvoice({
       customer_name: "",
       uid: v4(),
-      product_id: "",
+      _id: "",
       product_name: "",
       rate: "",
       unit: "",
@@ -104,7 +104,7 @@ export default function InvoiceForm(props) {
             <select
               className="form-control"
               id="exampleFormControlSelect1"
-              value={currentInvoice.product_id}
+              value={currentInvoice._id}
               onChange={(e) => updateCurrentProduct(e, e.target.value)}
             >
               <option value="" disabled selected>
@@ -112,8 +112,8 @@ export default function InvoiceForm(props) {
               </option>
               {products.map((product) => (
                 <option
-                  value={product.product_id}
-                  selected={product.product_id == currentInvoice.product_id}
+                  value={product._id}
+                  selected={product._id == currentInvoice._id}
                 >
                   {product.product_name}
                 </option>
