@@ -39,6 +39,6 @@ export default class InvoiceController {
       };
       let temp = await InvoiceDetail.create(newIncoiceDetail);
     }
-    response.status(201).json({ success: "ok", masterInvoice });
+    response.status(201).json({ success: "ok" });
   }
 }
